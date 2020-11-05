@@ -9,8 +9,8 @@ print("要求年龄在0-120之间")
 
 # 练习2: 定义两个整数变量 python_score、c_score，编写代码判断成绩
 # 要求只要有一门成绩 > 60 分就算合格
-python_score = float(input("科学成绩是："))
-c_score = float(input("数据成绩是："))
+python_score = float(input("python成绩是："))
+c_score = float(input("C语言成绩是："))
 
 if python_score >= 60 or c_score >=60:
     print("成绩合格")
