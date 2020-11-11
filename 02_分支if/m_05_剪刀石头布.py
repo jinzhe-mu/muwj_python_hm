@@ -29,7 +29,7 @@ while True:
             print("玩家弱爆了，电脑赢了！！")
             break
 
-    print("还要再来一局吗，哈哈哈哈哈，手下败将")
+    print("还要再来一局吗，哈哈哈哈哈!!!!")
     choice = input("请选择：Y/N:")
     if choice == "Y":
         print("比赛继续")
