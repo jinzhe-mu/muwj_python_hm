@@ -34,7 +34,7 @@ while True:
     if choice == "Y":
         print("比赛继续")
         continue
-    else:
-        print("比赛结束")
-        break
+
+    print("比赛结束")
+    break
 
