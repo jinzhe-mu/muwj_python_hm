@@ -10,6 +10,7 @@ name = "小明"
 # 注意：定义好函数之后，只表示这个函数封装了一段代码，不会被执行
 # 如果不主动调用函数，函数是不会被执行的
 def say_hello():
+    """函数的解释从这里加，方便阅读"""
     print("hello 1")
     print("hello 2")
     print("hello 2")
@@ -17,6 +18,6 @@ def say_hello():
 
 print(name)
 # 只有函数被调用时才会执行函数里面的内容
-say_hello()
+say_hello()  # 选中函数，按快捷键”ctrl+Q”可以查看到对函数备注的说明信息
 # 函数执行完成之后，会重新回到之前的程序中，继续执行后续的代码
 print(name)
