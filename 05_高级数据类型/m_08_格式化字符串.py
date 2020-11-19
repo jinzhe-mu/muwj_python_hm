@@ -4,8 +4,8 @@ info_list = [5, 8, "zhangsan"]
 # 格式化字符串后面的 ‘()’ 本质上是元祖
 
 print("%s 年龄是 %d 身高是 %.2f" % ("小明", 18, 185))
-
 print("%s 年龄是 %d 身高是 %.2f" % info_tuple)
+print()
 
 info_str = "%s 年龄是 %d 身高是 %.2f" % info_tuple
 print("直接输出字符串：", info_str)
