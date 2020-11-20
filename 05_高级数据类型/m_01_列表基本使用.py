@@ -1,3 +1,10 @@
+"""
+In [1]: name_list.
+name_list.append   name_list.count    name_list.insert   name_list.reverse
+name_list.clear    name_list.extend   name_list.pop      name_list.sort
+name_list.copy     name_list.index    name_list.remove
+"""
+
 name_list = ["zhangsan", "lisi", "wangwu", "lisi", "wangwu"]
 print("列表原始值", name_list)
 
