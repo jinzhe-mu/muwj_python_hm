@@ -17,4 +17,17 @@ hello_str.isdecimal     hello_str.replace       hello_str.zfill
 hello_str.isdigit       hello_str.rfind
 """
 
+str1 = "hello python"
 
+# 1、统计字符串长度
+print(len(str1))
+
+# 2、统计某一个小（子）字符串出现的次数
+# 如果使用count方法查找的子字符串不存在，不会报错，计数为0
+print(str1.count("llo"))
+print(str1.count("lbnv"))
+
+# 3、某一个字符串出现的位置
+print("子字符串出现的索引位置：", str1.index("llo"))
+# 注意：如果使用index方法传递的子字符串不存在，程序会报错！
+# print(str1.index("abc"))
