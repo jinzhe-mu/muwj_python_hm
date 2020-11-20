@@ -1,3 +1,11 @@
+"""字典操作方法：
+In [1]: xiaoming.
+xiaoming.clear       xiaoming.items       xiaoming.setdefault
+xiaoming.copy        xiaoming.keys        xiaoming.update
+xiaoming.fromkeys    xiaoming.pop         xiaoming.values
+xiaoming.get         xiaoming.popitem
+"""
+
 xiaoming_dict = {"name": "小明",
                  "gender": True}
 
