@@ -44,84 +44,85 @@ string.join(seq)	                以 string 作为分隔符，将 seq 中所有�
 
 # 1、判断空白字符  isspace 方法
 # 字符串中只包含空格返回True
-sapce1_str1 = " "
-print(sapce1_str1.isspace())
+space1_str1 = " "
+print(space1_str1.isspace())
 # 字符串中包含空格及制表符以外的字符返回False
-sapce1_str2 = "    a"
-print(sapce1_str2.isspace())
+space1_str2 = "    a"
+print(space1_str2.isspace())
 # 字符串汇总只包含空格和制表符时返回True
-sapce1_str3 = "    \t\n\r"
-print(sapce1_str3.isspace())
+space1_str3 = "    \t\n\r"
+print(space1_str3.isspace())
 
 print()
 
 # 2、判断字符全是字字母或数字  isalnum  方法
-# 字符串只包含字母返回True
-sapce2_str1 = "abSCC"
-print(sapce2_str1.isalnum())
-# 字符串包含字母和数字返回True
-sapce2_str2 = "23344sf"
-print(sapce2_str2.isalnum())
-# 字符串包含字母和数字以外的字符返回Flase
-sapce2_str3 = "djj7d*"
-print(sapce2_str3.isalnum())
+
+space2_str1 = "abSCC"  # 字符串只包含字母返回True
+print(space2_str1.isalnum())
+
+space2_str2 = "23344sf"  # 字符串包含字母和数字返回True
+print(space2_str2.isalnum())
+
+space2_str3 = "djj7d*"  # 字符串包含字母和数字以外的字符返回False
+print(space2_str3.isalnum())
 
 print()
 
 # 3、判断字符全部是字母  isalpha方法
-# 字符串全是字母返回True
-sapce3_str1 = "abSCC"
-print(sapce3_str1.isalpha())
-# 字符串包含字母以前的字符返回False
-sapce3_str2 = "23344sf"
-print(sapce3_str2.isalpha())
-sapce3_str3 = "djj7d*"
-print(sapce3_str3.isalpha())
+
+space3_str1 = "abSCC"  # 字符串全是字母返回True
+print(space3_str1.isalpha())
+
+space3_str2 = "23344sf"  # 字符串包含字母以前的字符返回False
+print(space3_str2.isalpha())
+space3_str3 = "djj7d*"  # 字符串包含字母以前的字符返回False
+print(space3_str3.isalpha())
 
 print()
 
-# 4、判断字符全部是全角数字 isdecimal 方法
+# 4、判断字符中是否只包含数字 isdecimal 方法\isdigit 方法\isnumeric 方法
 """
 isdecimal()
 True: Unicode数字，，全角数字（双字节）
 False: 罗马数字，汉字数字
 Error: byte数字（单字节）
 """
-# 字符串中只包含数字返回True
-
-# 5、判断字符串只包含数字 全角数字、⑴、\u00b2  isdigit 方法
 """
 isdigit()
 True: Unicode数字，byte数字（单字节），全角数字（双字节），罗马数字
 False: 汉字数字
 Error: 无
 """
-# 6、判断只包含数字则返回 True，全角数字，汉字数字  isnumeric 方法
 """
-isnumeric()
+isnumeric() 
 True: Unicode数字，全角数字（双字节），罗马数字，汉字数字
 False: 无
 Error: byte数字（单字节）
 """
+"""
+1> 三个方法都不能判断小数 如num_str = 1.1
+2> unicode 字符串 如num_str = (1) 、\u00b2
+3> 中文数字 如num_str ="一千零一"
 
-num_str1 = "三"  # 汉语数字
-print(num_str1.isdecimal())  # 返回False
-print(num_str1.isdigit())  # 返回False
-print(num_str1.isnumeric())  # 返回True
+"""
+num_str3 = "1"  # 全角
+print(num_str3.isdecimal())  # 返回True
+print(num_str3.isdigit())  # 返回True
+print(num_str3.isnumeric())  # 返回True
 
 print()
 
-num_str2 = "1"  # unicode
-print(num_str2.isdecimal())  # 返回True
+num_str2 = "\u00b2"  # unicode
+print(num_str2.isdecimal())  # 返回False
 print(num_str2.isdigit())  # 返回True
 print(num_str2.isnumeric())  # 返回True
 
 print()
 
-num_str3 = "1"  # 全角
-print(num_str3.isdecimal())  # 返回True
-print(num_str3.isdigit())  # 返回True
-print(num_str3.isnumeric())  # 返回True
+num_str1 = "一千零一"  # 汉语数字
+print(num_str1.isdecimal())  # 返回False
+print(num_str1.isdigit())  # 返回False
+print(num_str1.isnumeric())  # 返回True
 
 print()
 
@@ -139,7 +140,7 @@ print(num_str5.isnumeric())  # 返回True
 
 print()
 
-# 7、如果 string 是标题化的(每个单词的首字母大写)则返回 True istitle 方法
+# 5、如果 string 是标题化的(每个单词的首字母大写)则返回 True istitle 方法
 title_ste1 = "helps locate typos"  # 返回False
 title_ste2 = "Helps locate typos"  # 返回False
 title_ste3 = "Helps Locate Typos"  # 返回True
@@ -148,7 +149,7 @@ print(title_ste2.istitle())  # 返回False
 print(title_ste3.istitle())  # 返回True
 
 
-# 8、如果 string 中包含至少一个区分大小写的字符，并且所有这些(区分大小写的)字符都是小写，则返回 True islower 方法
+# 6、如果 string 中包含至少一个区分大小写的字符，并且所有这些(区分大小写的)字符都是小写，则返回 True islower 方法
 title_ste1 = "helps locate typos"  # 返回True
 title_ste2 = "Helps locate typos"  # 返回False
 title_ste3 = "Helps Locate Typos"  # 返回False
@@ -156,7 +157,7 @@ print(title_ste1.islower())  # 返回True
 print(title_ste2.islower())  # 返回False
 print(title_ste3.islower())  # 返回False
 
-# 9、如果 string 中包含至少一个区分大小写的字符，并且所有这些(区分大小写的)字符都是大写，则返回 True isupper 方法
+# 7、如果 string 中包含至少一个区分大小写的字符，并且所有这些(区分大小写的)字符都是大写，则返回 True isupper 方法
 lower_str1 = "HELPS LOCATE TYPOS"  # 返回True
 lower_str2 = "Helps locate typos"  # 返回False
 lower_str3 = "Helps Locate Typos"  # 返回False
