@@ -13,9 +13,9 @@ string.isupper()	    如果 string 中包含至少一个区分大小写的字符
 2) 查找和替换 - 7
 string.startswith(str)	                                    检查字符串是否是以 str 开头，是则返回 True
 string.endswith(str)	                                    检查字符串是否是以 str 结束，是则返回 True
-string.find(str, start=0, end=len(string))	             检测 str 是否包含在 string 中，如果 start 和 end 指定范围，则检查是否包含在指定范围内，如果是返回开始的索引值，否则返回 -1
-string.rfind(str, start=0, end=len(string))	             类似于 find()，不过是从右边开始查找
-string.index(str, start=0, end=len(string))	             跟 find() 方法类似，不过如果 str 不在 string 会报错
+string.find(str, start=0, end=len(string))	            检测 str 是否包含在 string 中，如果 start 和 end 指定范围，则检查是否包含在指定范围内，如果是返回开始的索引值，否则返回 -1
+string.rfind(str, start=0, end=len(string))	            类似于 find()，不过是从右边开始查找
+string.index(str, start=0, end=len(string))	            跟 find() 方法类似，不过如果 str 不在 string 会报错
 string.rindex(str, start=0, end=len(string))	            类似于 index()，不过是从右边开始
 string.replace(old_str, new_str, num=string.count(old))	    把 string 中的 old_str 替换成 new_str，如果 num 指定，则替换不超过 num 次
 3) 大小写转换 - 5
@@ -40,8 +40,9 @@ string.splitlines()	                按照行('\r', '\n', '\r\n')分隔，返回
 string.join(seq)	                以 string 作为分隔符，将 seq 中所有的元素（的字符串表示）合并为一个新的字符串
 
 """
+# 一、判断
 
-# 1、判断空白字符
+# 1、判断空白字符  isspace 方法
 # 字符串中只包含空格返回True
 sapce1_str1 = " "
 print(sapce1_str1.isspace())
@@ -54,17 +55,88 @@ print(sapce1_str3.isspace())
 
 print()
 
-# 2、判断字符全是字字母或数字
-# 字符串只包含字母返回Ture
+# 2、判断字符全是字字母或数字  isalnum  方法
+# 字符串只包含字母返回True
 sapce2_str1 = "abSCC"
 print(sapce2_str1.isalnum())
-# 字符串包含字母和数字返回Ture
+# 字符串包含字母和数字返回True
 sapce2_str2 = "23344sf"
 print(sapce2_str2.isalnum())
 # 字符串包含字母和数字以外的字符返回Flase
 sapce2_str3 = "djj7d*"
 print(sapce2_str3.isalnum())
+
 print()
 
+# 3、判断字符全部是字母  isalpha方法
+# 字符串全是字母返回True
+sapce3_str1 = "abSCC"
+print(sapce3_str1.isalpha())
+# 字符串包含字母以前的字符返回False
+sapce3_str2 = "23344sf"
+print(sapce3_str2.isalpha())
+sapce3_str3 = "djj7d*"
+print(sapce3_str3.isalpha())
+
+print()
+
+# 4、判断字符全部是全角数字 isdecimal 方法
+"""
+isdecimal()
+True: Unicode数字，，全角数字（双字节）
+False: 罗马数字，汉字数字
+Error: byte数字（单字节）
+"""
+# 字符串中只包含数字返回True
+
+# 5、判断字符串只包含数字 全角数字、⑴、\u00b2  isdigit 方法
+"""
+isdigit()
+True: Unicode数字，byte数字（单字节），全角数字（双字节），罗马数字
+False: 汉字数字
+Error: 无
+"""
+# 6、判断只包含数字则返回 True，全角数字，汉字数字
+"""
+isnumeric()
+True: Unicode数字，全角数字（双字节），罗马数字，汉字数字
+False: 无
+Error: byte数字（单字节）
+"""
+
+num_str1 = "三"  # 汉语数字
+print(num_str1.isdigit())  # 返回False
+print(num_str1.isdecimal())  # 返回False
+print(num_str1.isnumeric())  # 返回True
+
+print()
+
+num_str2 = "1"  # unicode
+print(num_str2.isdigit())  # 返回True
+print(num_str2.isdecimal())  # 返回True
+print(num_str2.isnumeric())  # 返回True
+
+print()
+
+num_str3 = "1"  # 全角
+print(num_str3.isdigit())  # 返回True
+print(num_str3.isdecimal())  # 返回True
+print(num_str3.isnumeric())  # 返回True
+
+print()
+
+num_str4 = b"1"  # byte
+print(num_str4.isdigit())  # 返回True
+print(num_str4.isdecimal())  # 报错：AttributeError: 'bytes' object has no attribute 'isdecimal'
+print(num_str4.isnumeric())  # 报错：AttributeError: 'bytes' object has no attribute 'isdecimal'
+
+print()
+
+num_str5 = "Ⅷ"  # 罗马数字
+print(num_str5.isdigit())  # 返回False（理论上返回Ture）
+print(num_str5.isdecimal())  # 返回False
+print(num_str5.isnumeric())  # 返回Ture
+
+print()
 
 
