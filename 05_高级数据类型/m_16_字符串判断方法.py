@@ -96,7 +96,7 @@ True: Unicode数字，byte数字（单字节），全角数字（双字节），
 False: 汉字数字
 Error: 无
 """
-# 6、判断只包含数字则返回 True，全角数字，汉字数字
+# 6、判断只包含数字则返回 True，全角数字，汉字数字  isnumeric 方法
 """
 isnumeric()
 True: Unicode数字，全角数字（双字节），罗马数字，汉字数字
@@ -105,38 +105,63 @@ Error: byte数字（单字节）
 """
 
 num_str1 = "三"  # 汉语数字
-print(num_str1.isdigit())  # 返回False
 print(num_str1.isdecimal())  # 返回False
+print(num_str1.isdigit())  # 返回False
 print(num_str1.isnumeric())  # 返回True
 
 print()
 
 num_str2 = "1"  # unicode
-print(num_str2.isdigit())  # 返回True
 print(num_str2.isdecimal())  # 返回True
+print(num_str2.isdigit())  # 返回True
 print(num_str2.isnumeric())  # 返回True
 
 print()
 
 num_str3 = "1"  # 全角
-print(num_str3.isdigit())  # 返回True
 print(num_str3.isdecimal())  # 返回True
+print(num_str3.isdigit())  # 返回True
 print(num_str3.isnumeric())  # 返回True
 
 print()
 
 num_str4 = b"1"  # byte
-print(num_str4.isdigit())  # 返回True
 print(num_str4.isdecimal())  # 报错：AttributeError: 'bytes' object has no attribute 'isdecimal'
+print(num_str4.isdigit())  # 返回True
 print(num_str4.isnumeric())  # 报错：AttributeError: 'bytes' object has no attribute 'isdecimal'
 
 print()
 
 num_str5 = "Ⅷ"  # 罗马数字
-print(num_str5.isdigit())  # 返回False（理论上返回Ture）
 print(num_str5.isdecimal())  # 返回False
-print(num_str5.isnumeric())  # 返回Ture
+print(num_str5.isdigit())  # 返回False（理论上返回True）
+print(num_str5.isnumeric())  # 返回True
 
 print()
+
+# 7、如果 string 是标题化的(每个单词的首字母大写)则返回 True istitle 方法
+title_ste1 = "helps locate typos"  # 返回False
+title_ste2 = "Helps locate typos"  # 返回False
+title_ste3 = "Helps Locate Typos"  # 返回True
+print(title_ste1.istitle())  # 返回False
+print(title_ste2.istitle())  # 返回False
+print(title_ste3.istitle())  # 返回True
+
+
+# 8、如果 string 中包含至少一个区分大小写的字符，并且所有这些(区分大小写的)字符都是小写，则返回 True islower 方法
+title_ste1 = "helps locate typos"  # 返回True
+title_ste2 = "Helps locate typos"  # 返回False
+title_ste3 = "Helps Locate Typos"  # 返回False
+print(title_ste1.islower())  # 返回True
+print(title_ste2.islower())  # 返回False
+print(title_ste3.islower())  # 返回False
+
+# 9、如果 string 中包含至少一个区分大小写的字符，并且所有这些(区分大小写的)字符都是大写，则返回 True isupper 方法
+lower_str1 = "HELPS LOCATE TYPOS"  # 返回True
+lower_str2 = "Helps locate typos"  # 返回False
+lower_str3 = "Helps Locate Typos"  # 返回False
+print(lower_str1.isupper())  # 返回True
+print(lower_str2.isupper())  # 返回False
+print(lower_str3.isupper())  # 返回False
 
 
