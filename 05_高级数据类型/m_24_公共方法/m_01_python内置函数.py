@@ -20,13 +20,14 @@ d = {"name": "小明",
 c = "0aA"
 
 # 计算长度,列表、字典、字符共用
-print(len(a), len(b), len(c))  # 7 9 3
+print(len(a), len(b), len(d))  # 7 9 5
 
 # del 的两种用法
 del (a[0])  # [1, 2, 3, 4, 5, 6]
 del a[1]  # [1, 3, 4, 5, 6]
+del d["age"]  # {'name': '小明', 'gender': True, 'height': 180, 'weight': 140}
 
-print(a, b, c)
+print(a, b, c, d)
 
 # del a  # 等价于del(a)
 # print(a)  # 列表a被直接删除
