@@ -60,10 +60,12 @@ while True:
     # 如果为Y，查找学生信息
     if find_choice == "Y":
         finds()
-    else:
+    elif find_choice == "Y":
         print()
         print("退出查找！")
         break
+    else:
+        print("请输入N/Y进行查找！")
 
 
 
