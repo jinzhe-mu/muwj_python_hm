@@ -51,8 +51,12 @@ def finds():
             for student_str in student_dic:
                 print(f"{student_str}是：{student_dic[student_str]}", end=" \t")
     # 如果查询不到，输出 查无此人！
-    print("查无此人！")
-    print()
+    else:
+        """
+        else搭配for循环进行使用
+        """
+        print("查无此人！")
+        print()
 
 
 while True:
@@ -61,7 +65,7 @@ while True:
     # 如果为Y，查找学生信息
     if find_choice == "Y":
         finds()
-    elif find_choice == "Y":
+    elif find_choice == "N":
         print()
         print("退出查找！")
         break
