@@ -52,11 +52,13 @@ def finds():
             # 如果等于，将字典的信息以字符串的方式输出
             for student_str in student_dic:
                 print(f"{student_str}是：{student_dic[student_str]}", end=" \t")
+            print()
+            # 如果找到，应该直接退出循环，不再遍历后续的元素（节省资源）
+            break
     # 如果查询不到，输出 查无此人！
     else:
-        """
-        else搭配for循环进行使用
-        """
+        # 如果希望在搜索列表时，所有的字典检查之后，都没有发现需要搜索的目标
+        # 还希望有一个统一的提示，此时就使用for + else 组合
         print("查无此人！")
         print()
 
