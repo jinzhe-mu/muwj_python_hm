@@ -40,6 +40,7 @@ student_list = [{"name": "小金", "eag": 18, "gender": True, "weight": 56, "hei
 
 
 def finds():
+    print()
     find_name = input("请输入查找人姓名：")
     # 循环所有字典进行查找
     for student_dic in student_list:
@@ -65,7 +66,9 @@ while True:
         print("退出查找！")
         break
     else:
+        print()
         print("请输入N/Y进行查找！")
+        print()
 
 
 
