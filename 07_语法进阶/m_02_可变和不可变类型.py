@@ -60,10 +60,10 @@ print("demo_dict是内存地址是:%d" % id(demo_dict))  # demo_dict是内存地
 
 # 注意：字典的 key 只能使用不可变类型的数据，不能使用列表和字典
 demo_dict = {"key": "键值"}
-print(demo_dict)
+print(demo_dict)  # {'key': '键值'}
 demo_dict[1] = "整数"
 
 demo_dict[(1,)] = "元祖"
 
 demo_dict["name"] = "字符串"
-print(demo_dict)
+print(demo_dict)  # {'key': '键值', 1: '整数', (1,): '元祖', 'name': '字符串'}
