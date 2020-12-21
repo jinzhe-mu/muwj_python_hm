@@ -58,3 +58,12 @@ print(demo_dict)  # {'name': 'xiaohong', 'age': 18}
 print("demo_dict是内存地址是:%d" % id(demo_dict))  # demo_dict是内存地址是:7564216
 
 
+# 注意：字典的 key 只能使用不可变类型的数据，不能使用列表和字典
+demo_dict = {"key": "键值"}
+print(demo_dict)
+demo_dict[1] = "整数"
+
+demo_dict[(1,)] = "元祖"
+
+demo_dict["name"] = "字符串"
+print(demo_dict)
