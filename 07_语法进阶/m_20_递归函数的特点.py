@@ -24,6 +24,7 @@ def sum_number(num):
 
     # 自己调用自己
     sum_number(num-1)
+    return num
 
 
 result = sum_number(3)
